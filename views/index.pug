@@ -1,0 +1,15 @@
+//- index.pug
+extend ./layout.pug
+
+block content
+	ul.col.md-6
+		each item in items
+			li
+				a(href=item.href) #{item.name}
+			if(item.subTopic.length>0)
+				ul
+					each subitem in item.subTopic
+						li
+							a(href=subitem.subHref) #{subitem.subName}
+
+
